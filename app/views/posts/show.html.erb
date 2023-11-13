@@ -12,10 +12,9 @@
 
 <div id="comments">
   <h1>Comments</h1>
-  <!-- The `comments` method returns an array-like collection, so we can call `each` on it: -->
-  <% @post.comments.each do |comment| %>
     <%= render @post.comments %>
-  <% end %>
+  <h2>Add a Comment</h2>
+  <%= render partial: "comments/form", locals: {comment: @post.comments.new}%>
 </div>
 
 <%= link_to 'Edit', edit_post_path(@post) %>
